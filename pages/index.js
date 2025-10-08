@@ -11,8 +11,7 @@ export default function Home() {
       <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-200">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Image src="/kickfixx-logo-00B8FF.png" alt="Kickfixx" width={160} height={40} priority />
-<Image src="/vending-mockup.png" alt="Kickfixx vending mockup" width={800} height={520} priority />
+          
 
              <span className="sr-only">KICKFIXX</span>
           </div>
