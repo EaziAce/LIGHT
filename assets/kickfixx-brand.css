@@ -1,0 +1,20 @@
+:root{--kickfixx-blue:#00B8FF;--text:#FFFFFF;--bg:#0A0A0A}
+.kx-btn{background:var(--kickfixx-blue);color:#000;font-weight:700;border:0;border-radius:12px;padding:12px 16px;cursor:pointer}
+.kx-btn:hover{filter:brightness(1.05)}
+.kx-accent{color:var(--kickfixx-blue)}
+.kx-border{border-color:var(--kickfixx-blue)!important}
+header.site-header{background:#0A0A0A}
+
+
+/* Kickfixx header + hero */
+.site-wrap{min-height:100vh;background:#0A0A0A;color:#f5f7fa}
+.kx-container{max-width:1160px;margin:0 auto;padding:20px}
+.kx-header{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #1f2937}
+.kx-header img{height:40px;width:auto}
+.kx-cta{background:#00B8FF;color:#000;border:0;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer}
+.kx-cta:hover{filter:brightness(1.05)}
+.kx-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:48px 0}
+.kx-hero h1{font-size:44px;line-height:1.1;margin:0 0 12px}
+.kx-hero p{opacity:.9;margin:0 0 18px}
+.kx-hero img{width:100%;height:auto;border-radius:16px;border:1px solid #1f2937}
+@media (max-width:900px){.kx-hero{grid-template-columns:1fr}}

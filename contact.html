@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kickfixx — Contact</title>
+  <link rel="stylesheet" href="assets/kickfixx-brand.css" />
+  <style>
+    *{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
+    body{margin:0;background:#0A0A0A;color:#f5f7fa;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px}
+    .card{width:100%;max-width:560px;background:#111;border:1px solid #1f2937;border-radius:20px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .brand img{height:40px;width:auto}
+    .brand .name{font-weight:800;font-size:20px;letter-spacing:.3px}
+    h1{font-size:22px;margin:8px 0 14px}
+    p{opacity:.8;margin:0 0 20px}
+    label{display:block;font-weight:600;margin:14px 0 6px}
+    input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #2a2a2a;background:#0e0e0e;color:#f5f7fa;outline:none}
+    textarea{min-height:120px;resize:vertical}
+    button{margin-top:14px;width:100%;}
+    .notice{font-size:12px;opacity:.7;margin-top:12px}
+    .success,.error{display:none;margin-top:12px;padding:10px;border-radius:10px}
+    .success{background:rgba(0,184,255,.15);border:1px solid rgba(0,184,255,.55)}
+    .error{background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.55)}
+  </style>
+</head>
+<body>
+<div class="site-wrap">
+  <div class="kx-container">
+    <header class="kx-header">
+      <img src="assets/kickfixx-logo-00B8FF.png" alt="Kickfixx" />
+      <a href="contact.html"><button class="kx-cta">Contact</button></a>
+    </header>
+
+    <section class="kx-hero">
+      <div>
+        <h1><span style="color:#00B8FF">Kickfixx</span> Vending & Supplies</h1>
+        <p>Smart, clean, and modern convenience. Custom merchandising and premium cleaning products for busy locations.</p>
+        <a href="contact.html"><button class="kx-cta">Get in touch</button></a>
+      </div>
+      <div>
+        <img src="assets/vending-mockup.png" alt="Kickfixx vending machine mockup"/>
+      </div>
+    </section>
+  </div>
+</div>
+
+  <div class="card">
+    <div class="brand">
+      <img src="assets/kickfixx-logo-00B8FF.png" alt="Kickfixx logo" />
+      <div class="name">Kickfixx</div>
+    </div>
+    <h1 class="kx-accent">Contact Us</h1>
+    <p>Questions, wholesale, or partnerships? Send us a note and we’ll get back quickly.</p>
+
+    <!-- Replace YOUR_FORMSPREE_ID with your actual ID (e.g., xqkrjvvd). -->
+    <form id="contact" action="https://formspree.io/f/mpwyjqgq" method="POST">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" placeholder="Your name" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="_replyto" type="email" placeholder="you@example.com" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+
+      <input type="hidden" name="_subject" value="New message from kickfixx.com" />
+      <input type="hidden" name="_language" value="en" />
+
+      <button type="submit" class="kx-btn">Send</button>
+    
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+</form>
+
+    <div class="success" id="ok">✅ Message sent. We’ll reply soon.</div>
+    <div class="error" id="err">⚠️ Something went wrong. Please try again.</div>
+
+    <div class="notice">Powered by Formspree • Accents use Kickfixx Blue #00B8FF.</div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contact');
+    const ok = document.getElementById('ok');
+    const err = document.getElementById('err');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if (res.ok) { ok.style.display='block'; err.style.display='none'; form.reset(); }
+        else { err.style.display='block'; ok.style.display='none'; }
+      } catch (ex) {
+        err.style.display='block'; ok.style.display='none';
+      }
+    });
+  </script>
+</body>
+</html>
